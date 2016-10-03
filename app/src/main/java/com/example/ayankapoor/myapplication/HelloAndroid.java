@@ -9,13 +9,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.EditText;
 import android.content.SharedPreferences;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 import android.content.Context;
-import android.support.v4.app.Fragment;
 
 import java.util.Random;
 
@@ -29,6 +27,7 @@ public class HelloAndroid extends AppCompatActivity {
     Button button_next;
     Button button_send;
     Button button_cheat;
+    Button button_login;
     TextView text_number;
     TextView textView_score;
     TextView textView_highscore;
@@ -81,6 +80,7 @@ public class HelloAndroid extends AppCompatActivity {
         textView_highscore = (TextView) findViewById((R.id.textView_highscore));
         button_send =(Button)findViewById(R.id.button_send);
         button_cheat=(Button)findViewById(R.id.button_cheat);
+        button_login=(Button)findViewById(R.id.button_login);
 
         if(flagForHint!=0)
             button_send.setEnabled(false);
@@ -254,6 +254,8 @@ public class HelloAndroid extends AppCompatActivity {
     }
 
 
+
+
     /** Called when the user clicks the Send button */
     public void sendMessage(View view) {
         Intent intent = new Intent(this, DisplayMessageActivity.class);
@@ -268,6 +270,7 @@ public class HelloAndroid extends AppCompatActivity {
 
     }
 
+
     public void sendCheat(View view) {
         Intent intent = new Intent(this, DisplayCheatActivity.class);
         TextView editText = (TextView) findViewById(R.id.text_number);
@@ -280,6 +283,16 @@ public class HelloAndroid extends AppCompatActivity {
         flagForCheat=1;
 
     }
+
+    public void login(View view) {
+        Intent intent = new Intent(this, LoginActivity.class);
+
+        //intent.putExtra("name", user.getUserFullName());
+        startActivity(intent);
+
+
+    }
+
 
     private static int getRandomNumberInRange(int min, int max) {
 

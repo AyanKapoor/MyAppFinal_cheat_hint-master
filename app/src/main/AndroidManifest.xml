@@ -19,7 +19,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".DisplayMessageActivity" />
-        <activity android:name=".DisplayCheatActivity"></activity>
+        <activity android:name=".DisplayCheatActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity2" />
+        <activity android:name=".CreateAccountActivity" />
+        <activity android:name=".DeleteAccountActivity"></activity>
     </application>
 
 </manifest>

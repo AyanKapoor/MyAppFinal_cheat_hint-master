@@ -135,6 +135,7 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:id="@+id/button_login"
+        android:onClick="login"
         android:layout_below="@+id/button_next"
         android:layout_alignLeft="@+id/button_next"
         android:layout_alignStart="@+id/button_next"
