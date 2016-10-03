@@ -18,6 +18,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.DatabaseUtils;
 import android.widget.Toast;
+import 	java.io.OutputStream;
+import java.io.FileOutputStream;
 import android.content.ContentValues;
 
 import java.util.Random;
@@ -55,6 +57,19 @@ public class CreateAccountActivity extends AppCompatActivity {
         //values.put("username", username);
         //values.put("password", password);
        mDbHelper.insertUser(username,password);
+
+        //Writing to the internal memory each time a new account is created
+        String filename = "myfile";
+        String string = "New account created";
+        FileOutputStream outputStream;
+
+        try {
+            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write(string.getBytes());
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
         Toast.makeText(getApplicationContext(),"Account created",Toast.LENGTH_SHORT).show();

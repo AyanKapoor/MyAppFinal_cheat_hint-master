@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    public void login(View view) {
+    public void login3(View view) {
         Intent intent = new Intent(this, LoginActivity2.class);
 
         //intent.putExtra("name", user.getUserFullName());
@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
+
 
     public void delete_account(View view) {
         Intent intent = new Intent(this, DeleteAccountActivity.class);

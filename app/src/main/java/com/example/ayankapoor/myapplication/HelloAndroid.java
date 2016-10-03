@@ -9,11 +9,20 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import android.content.SharedPreferences;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
+import java.io.FileOutputStream;
 import android.content.Context;
+import java.io.File;
+import java.io.FileWriter;
+
+import android.os.Environment;
 
 import java.util.Random;
 
@@ -126,6 +135,18 @@ public class HelloAndroid extends AppCompatActivity {
                 {
                     message = "Wrong Answer";
                     score--;
+                    if(!isExternalStorageWritable())
+                    {
+                        File file = getFile();
+                        System.out.println("hello");
+                        try {
+                        FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                        BufferedWriter bw = new BufferedWriter(fw);
+                        bw.write(num2);
+                        bw.close();}catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
                 else
                 {
@@ -171,6 +192,19 @@ public class HelloAndroid extends AppCompatActivity {
                 {
                     message = "Wrong Answer";
                     score--;
+
+                    if(isExternalStorageWritable())
+                    {
+                        File file = getFile();
+
+                        try {
+                            FileWriter fw = new FileWriter(file.getAbsoluteFile());
+                            BufferedWriter bw = new BufferedWriter(fw);
+                            bw.write(num2);
+                            bw.close();}catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
                 }
 
 
@@ -291,6 +325,22 @@ public class HelloAndroid extends AppCompatActivity {
         startActivity(intent);
 
 
+    }
+
+    public boolean isExternalStorageWritable() {
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+    public File getFile() {
+        // Get the directory for the user's public pictures directory.
+        File file = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_ALARMS), "prime_numbers");
+
+        return file;
     }
 
 
