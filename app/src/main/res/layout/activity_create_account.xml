@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Create a new account"
+        android:text="Create a new comment"
         android:id="@+id/textView9"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Password:"
+        android:text="Comment:"
         android:id="@+id/textView11"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -62,7 +62,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create account"
+        android:text="Create comment"
         android:onClick="create_account"
         android:id="@+id/button_create_account"
         android:layout_marginTop="68dp"

@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Update your existing account"
+        android:text="Update your existing comment"
         android:id="@+id/textView12"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Password"
+        android:text="Comment"
         android:id="@+id/textView14"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"

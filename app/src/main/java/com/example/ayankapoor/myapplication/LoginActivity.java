@@ -53,4 +53,14 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    public void view_comments(View view){
+        Intent intent = new Intent(this, ViewCommentsActivity.class);
+
+        //intent.putExtra("name", user.getUserFullName());
+        startActivity(intent);
+
+
+
+    }
+
 }

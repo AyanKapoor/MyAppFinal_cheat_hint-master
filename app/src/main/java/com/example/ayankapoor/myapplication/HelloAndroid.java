@@ -135,17 +135,18 @@ public class HelloAndroid extends AppCompatActivity {
                 {
                     message = "Wrong Answer";
                     score--;
-                    if(!isExternalStorageWritable())
-                    {
-                        File file = getFile();
-                        System.out.println("hello");
-                        try {
-                        FileWriter fw = new FileWriter(file.getAbsoluteFile());
-                        BufferedWriter bw = new BufferedWriter(fw);
-                        bw.write(num2);
-                        bw.close();}catch (IOException e) {
-                            e.printStackTrace();
-                        }
+
+                    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "prime_nos.txt");
+
+                    FileOutputStream os;
+                    try {
+                        os = new FileOutputStream(file, true);
+                        os.write(num2.getBytes());
+
+
+                        os.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
                 }
                 else
@@ -193,18 +194,20 @@ public class HelloAndroid extends AppCompatActivity {
                     message = "Wrong Answer";
                     score--;
 
-                    if(isExternalStorageWritable())
-                    {
-                        File file = getFile();
+                    File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "prime_nos.txt");
 
-                        try {
-                            FileWriter fw = new FileWriter(file.getAbsoluteFile());
-                            BufferedWriter bw = new BufferedWriter(fw);
-                            bw.write(num2);
-                            bw.close();}catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                    FileOutputStream os;
+                    try {
+                        os = new FileOutputStream(file, true);
+                        os.write(num2.getBytes());
+
+
+                        os.close();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
+
+
                 }
 
 
@@ -327,7 +330,7 @@ public class HelloAndroid extends AppCompatActivity {
 
     }
 
-    public boolean isExternalStorageWritable() {
+   /* public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
         if (Environment.MEDIA_MOUNTED.equals(state)) {
             return true;
@@ -341,7 +344,7 @@ public class HelloAndroid extends AppCompatActivity {
                 Environment.DIRECTORY_ALARMS), "prime_numbers");
 
         return file;
-    }
+    }*/
 
 
     private static int getRandomNumberInRange(int min, int max) {

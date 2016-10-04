@@ -60,7 +60,7 @@ public class CreateAccountActivity extends AppCompatActivity {
 
         //Writing to the internal memory each time a new account is created
         String filename = "myfile";
-        String string = "New account created";
+        String string = "New comment created";
         FileOutputStream outputStream;
 
         try {

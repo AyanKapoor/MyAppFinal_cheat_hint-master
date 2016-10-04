@@ -3,6 +3,7 @@
     package="com.example.ayankapoor.myapplication">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -34,7 +35,8 @@
         </activity>
         <activity android:name=".LoginActivity2" />
         <activity android:name=".CreateAccountActivity" />
-        <activity android:name=".DeleteAccountActivity"></activity>
+        <activity android:name=".DeleteAccountActivity" />
+        <activity android:name=".ViewCommentsActivity"></activity>
     </application>
 
 </manifest>
