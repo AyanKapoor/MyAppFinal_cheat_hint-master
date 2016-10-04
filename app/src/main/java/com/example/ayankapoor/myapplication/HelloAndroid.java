@@ -200,7 +200,7 @@ public class HelloAndroid extends AppCompatActivity {
                     try {
                         os = new FileOutputStream(file, true);
                         os.write(num2.getBytes());
-
+                        os.write('\n');
 
                         os.close();
                     } catch (Exception e) {

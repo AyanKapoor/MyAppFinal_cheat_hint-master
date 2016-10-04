@@ -61,7 +61,7 @@ public class ViewCommentsActivity extends ListActivity {
             ListAdapter adapter = new SimpleAdapter(ViewCommentsActivity.this, studentList, R.layout.activity_view_comments, new String[]{"username", "comment"}, new int[]{R.id.username1, R.id.comment1});
             setListAdapter(adapter);
         } else {
-            Toast.makeText(this, "No movie!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No comments!", Toast.LENGTH_SHORT).show();
         }
 
     }
